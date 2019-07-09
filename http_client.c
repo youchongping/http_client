@@ -86,7 +86,7 @@ int user_http_url_parse(const char *url,struct http_server_info *user_server)
 
 void received_buf_process(const char *response_body,ssize_t nread)
 {
-	fprintf(stdout,"+++++++++response %d bytes:\n%s \n",(int)nread,response_body);	
+	//fprintf(stdout,"+++++++++response %d bytes:\n%s \n",(int)nread,response_body);	
 	char public_ip_str[20];
 	memset(public_ip_str,0,sizeof(public_ip_str));
 
@@ -173,7 +173,7 @@ int main(int argc,char** argv)
 	
 	
 	memset(write_buf,0,sizeof(write_buf));
-	snprintf(write_buf,MAX_REQUEST_BODY_SIZE,"GET %s HTTP/1.1\r\nHost:%s\r\nUser-Agent:esp8266 yubot\r\nConnection:close \r\n\r\n{}",
+	snprintf(write_buf,MAX_REQUEST_BODY_SIZE,"GET %s HTTP/1.1\r\nHost:%s\r\nUser-Agent:xxx\r\nConnection:close \r\n\r\n{}",
                 user_server_url.path,user_server_url.hostname);
 	len = strlen(write_buf);
 	//fprintf(stdout,"+++++++++write %d bytes:\n%s \n\n",(int)len,write_buf);
